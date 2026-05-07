@@ -526,4 +526,34 @@
         });
     }
 
+    // ========================================
+    // 15. RESPONSIVE TABLES (Mobile)
+    // ========================================
+    function makeTablesResponsive() {
+        const tables = document.querySelectorAll('table');
+
+        tables.forEach(table => {
+            // Get headers
+            const headers = [];
+            const headerCells = table.querySelectorAll('thead th, thead td');
+            headerCells.forEach(header => {
+                headers.push(header.textContent.trim());
+            });
+
+            // Add data-label to each cell
+            const rows = table.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, index) => {
+                    if (headers[index]) {
+                        cell.setAttribute('data-label', headers[index]);
+                    }
+                });
+            });
+        });
+    }
+
+    // Run on load
+    makeTablesResponsive();
+
 })();

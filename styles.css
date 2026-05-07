@@ -1247,12 +1247,63 @@ hr {
         width: 100%;
     }
 
-    /* Make tables responsive */
+    /* Make tables responsive - simplified card layout */
     table {
+        font-size: 0.75rem;
         display: block;
-        overflow-x: auto;
+        width: 100%;
+        overflow-x: visible;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tbody {
+        display: block;
+    }
+
+    table tr {
+        display: block;
+        margin-bottom: var(--space-md);
+        border: 1px solid var(--color-border);
+        border-radius: 4px;
+        padding: var(--space-sm);
+        background: var(--color-paper-alt);
+    }
+
+    table td {
+        display: block;
+        text-align: left;
+        border: none;
+        padding: var(--space-xs) 0;
+        position: relative;
+        padding-left: 40%;
+        min-height: 1.5rem;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 38%;
+        padding-right: 10px;
         white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
+        font-weight: 600;
+        color: var(--color-accent);
+        font-size: 0.7rem;
+    }
+
+    /* Fallback: если нет data-label, показываем просто данные */
+    table td:first-child {
+        padding-left: 0;
+        font-weight: 600;
+        color: var(--color-accent-dark);
+        margin-bottom: var(--space-xs);
+    }
+
+    table td:first-child::before {
+        display: none;
     }
 
     /* Adjust images */
