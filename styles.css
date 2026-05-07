@@ -1247,12 +1247,13 @@ hr {
         width: 100%;
     }
 
-    /* Make tables responsive - simplified card layout */
+    /* Make tables responsive - improved card layout */
     table {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         display: block;
         width: 100%;
         overflow-x: visible;
+        margin: var(--space-lg) 0;
     }
 
     table thead {
@@ -1265,11 +1266,25 @@ hr {
 
     table tr {
         display: block;
-        margin-bottom: var(--space-md);
-        border: 1px solid var(--color-border);
-        border-radius: 4px;
-        padding: var(--space-sm);
+        margin-bottom: var(--space-lg);
+        border: 2px solid var(--color-border-dark);
+        border-radius: 6px;
+        padding: var(--space-md);
         background: var(--color-paper-alt);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+    /* Row number indicator */
+    table tr::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--color-accent);
+        border-radius: 6px 0 0 6px;
     }
 
     table td {
@@ -1278,32 +1293,43 @@ hr {
         border: none;
         padding: var(--space-xs) 0;
         position: relative;
-        padding-left: 40%;
-        min-height: 1.5rem;
+        padding-left: 45%;
+        min-height: 1.8rem;
+        line-height: 1.6;
     }
 
     table td::before {
         content: attr(data-label);
         position: absolute;
         left: 0;
-        width: 38%;
+        width: 42%;
         padding-right: 10px;
-        white-space: nowrap;
         font-weight: 600;
         color: var(--color-accent);
         font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
-    /* Fallback: если нет data-label, показываем просто данные */
+    /* First cell - header style */
     table td:first-child {
         padding-left: 0;
-        font-weight: 600;
+        padding-top: 0;
+        font-weight: 700;
+        font-size: 0.9rem;
         color: var(--color-accent-dark);
-        margin-bottom: var(--space-xs);
+        margin-bottom: var(--space-sm);
+        padding-bottom: var(--space-xs);
+        border-bottom: 1px solid var(--color-border);
     }
 
     table td:first-child::before {
         display: none;
+    }
+
+    /* Last cell - no extra space */
+    table td:last-child {
+        padding-bottom: 0;
     }
 
     /* Adjust images */
