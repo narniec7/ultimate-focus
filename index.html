@@ -43,7 +43,6 @@
    <!-- Reading Info Indicator -->
    <div class="reading-info">
       <span class="current-chapter">Глава 1/17</span>
-      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Переключить тему">☀️</button>
    </div>
 
    <nav class="toc-sidebar">
@@ -122,9 +121,15 @@
         <span>40 разделов</span>
         <span>8 протоколов</span>
     </div>
-    <div class="telegram-link-title">
-        <span class="telegram-label">Мысли автора</span>
-        <a href="https://t.me/LogosGenesis" target="_blank" rel="noopener">t.me/LogosGenesis</a>
+    <div style="margin-top: 2rem;">
+        <a href="https://t.me/LogosGenesis" target="_blank" rel="noopener" style="
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all var(--transition);
+        " onmouseover="this.style.color='var(--color-accent)'; this.style.borderBottomColor='var(--color-accent)';" onmouseout="this.style.color='var(--color-text-light)'; this.style.borderBottomColor='transparent';">t.me/LogosGenesis</a>
     </div>
     <div class="ornament-bottom"></div>
 </section>
@@ -895,8 +900,8 @@ DMN включается, когда мозг НЕ занят внешней з�
 
 <hr>
 
-<div class="telegram-link-title">
-    <span class="telegram-label">Мысли автора</span>
+<div class="telegram-link-title" style="margin-top: 4rem;">
+    <span class="telegram-label">Telegram-канал проекта</span>
     <a href="https://t.me/LogosGenesis" target="_blank" rel="noopener">t.me/LogosGenesis</a>
 </div>
 
