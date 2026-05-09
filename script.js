@@ -507,24 +507,7 @@
         animId = requestAnimationFrame(tick);
     }
 
-    // ========================================
-    // 14. THEME TOGGLE
-    // ========================================
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    if (themeToggleBtn) {
-        // Check local storage for preference
-        const savedTheme = localStorage.getItem('superfocus-theme');
-        if (savedTheme === 'light') {
-            document.documentElement.classList.add('theme-light');
-            themeToggleBtn.innerHTML = '🌙';
-        }
-
-        themeToggleBtn.addEventListener('click', () => {
-            const isLight = document.documentElement.classList.toggle('theme-light');
-            themeToggleBtn.innerHTML = isLight ? '🌙' : '☀️';
-            localStorage.setItem('superfocus-theme', isLight ? 'light' : 'dark');
-        });
-    }
+    // Theme toggle removed - dark theme only for premium aesthetic
 
     // ========================================
     // 15. RESPONSIVE TABLES (Mobile)
